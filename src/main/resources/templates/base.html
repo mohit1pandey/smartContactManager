@@ -1,0 +1,75 @@
+<!--This is a base fragment file and can be used in any where in the code -->
+
+<!DOCTYPE html>
+<html lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org " class="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- some common css -->
+
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+
+    <!-- flow byte CDN for CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+    <!--  font awesome font cdn link  -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <title th:replace="${title}">Base Page</title>
+</head>
+
+<body class=" bg-gray-200 dark:bg-gray-900 dark:text-white">
+    <!-- common header -->
+
+
+
+    <!-- if use is logged in :: navbar-->
+
+    <div th:if="${loggedInUser}">
+        <div th:replace="~{user/user_navbar::user-navbar}">
+
+        </div>
+
+    </div>
+
+    <!-- if user is not logged in  -->
+    <div th:unless="${loggedInUser}">
+        <div th:replace="~{navbar::navbar}">
+
+        </div>
+    </div>
+
+    <!-- main content -->
+    <div class="p-4">
+        <section th:replace="${content}"></section>
+    </div>
+
+    <!-- common footer -->
+
+    <!-- <footer class="p-4">
+        <p>code with me pusssssss</p>
+     </footer> -->
+
+</body>
+
+
+<!-- flow byte CDN for JS -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+<!-- sweet alerts -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script th:src="@{/js/script.js}"></script>
+
+<!-- custom script -->
+<div th:replace="${script}">
+
+</div>
+
+</html>

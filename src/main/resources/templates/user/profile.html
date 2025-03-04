@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div id="content">
+
+
+        <!-- if use is logged in :: sidebar-->
+
+        <div th:if="${loggedInUser}">
+            <div th:replace="~{user/sidebar::sidebar}">
+
+            </div>
+
+        </div>
+
+
+        <div class="h-[1000px] pt-40 sm:pl-64 sm:pt-20 flex flex-col  items-center">
+            <h1 class="text-5xl">Welcome to Peofile Page</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, ullam atque quos libero repellat, hic
+                praesentium dolor voluptatum neque cupiditate minima molestiae quae laudantium ad ipsa nam quis autem
+                accusantium placeat aut ipsam.
+            </p>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    console.log("home page lodded")
+</script>
+
+</html>
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div th:replace ="~{user/user_navbar::user-navbar}">
+
+  </div>
+</body>
+</html> -->
