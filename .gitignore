@@ -42,5 +42,8 @@ npm-debug.log
 *.css
 
 # Ignore OS-generated files
-.DS_Store
-Thumbs.db
+# Ignore configuration files with potential sensitive data
+/src/main/resources/application.yml
+/src/main/resources/application.properties
+/src/main/resources/config.yml
+/src/main/resources/configuration.yml
